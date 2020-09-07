@@ -1,0 +1,13 @@
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  @include theme-btn;
+
+  img {
+    margin-right: 10px;
+  }
+}

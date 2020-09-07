@@ -1,0 +1,10 @@
+$logo_bg: #007be8;
+
+.logo {
+  background-color: $logo_bg;
+  width: 220px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

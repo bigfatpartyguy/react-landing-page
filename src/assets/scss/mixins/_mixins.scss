@@ -1,0 +1,5 @@
+@mixin theme-btn($text: 'default', $bg: 'default', $border: 'default') {
+  color: map-get($btn-text, $text);
+  background: map-get($btn-bg, $bg);
+  border: map-get($btn-border, $border);
+}
