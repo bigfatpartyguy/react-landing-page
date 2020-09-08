@@ -1,0 +1,11 @@
+@import '../../../assets/scss/colors/colors';
+
+.nav-section {
+  .nav-section__title {
+    color: map-get($nav, section-title);
+  }
+
+  .nav-section__link-block {
+    list-style: none;
+  }
+}

@@ -12,4 +12,9 @@ $btn-border: (
   default: none,
 );
 
-$nav: #f4f4f4;
+$nav: (
+  bg: #f4f4f4,
+  section-title: #c1c1c1,
+);
+
+$labels: #fe5151, #35b747, #088bd6, #ba61f2, #e9d33c;
