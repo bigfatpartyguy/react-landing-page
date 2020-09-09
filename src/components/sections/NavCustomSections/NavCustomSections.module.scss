@@ -1,0 +1,11 @@
+@import '../../../assets/scss/colors/colors';
+
+.label {
+  @each $color in $labels {
+    &--color#{nth($color, 1)} {
+      path {
+        fill: nth($color, 2);
+      }
+    }
+  }
+}

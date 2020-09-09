@@ -9,7 +9,8 @@ import linkIcon from '../../../assets/images/Link_Icon.svg';
 import calendarIcon from '../../../assets/images/Calendar_Icon.png';
 import carouselIcon from '../../../assets/images/Carousel_Icon.png';
 import mailboxIcon from '../../../assets/images/Mailbox_Icon.svg';
-import '../../../assets/images/Circle.svg';
+import {ReactComponent as LabelIcon} from '../../../assets/images/Circle.svg';
+import styles from './NavCustomSections.module.scss';
 
 const NavMain = () => (
   <NavSection title="Main">
@@ -42,42 +43,29 @@ const NavAlso = () => (
   </NavSection>
 );
 
-const NavLabels = () => {
-  const labelIcon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="13"
-      height="13"
-      viewBox="0 0 13 13">
-      <g>
-        <g>
-          <path
-            fill="#fe5151"
-            d="M6.5 0a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13zM1.53 6.5a4.97 4.97 0 1 0 9.94 0 4.97 4.97 0 0 0-9.94 0zM4 5V4h5v1zm0 2V6h3v1zm0 2V8h5v1z"
-          />
-        </g>
-      </g>
-    </svg>
-  );
-  return (
-    <NavSection className="nav-section__labels" title="Labels">
-      <Button type="text" icon={labelIcon}>
-        Design
-      </Button>
-      <Button type="text" icon={labelIcon}>
-        Web Elements
-      </Button>
-      <Button type="text" icon={labelIcon}>
-        Mobile
-      </Button>
-      <Button type="text" icon={labelIcon}>
-        Application
-      </Button>
-      <Button type="text" icon={labelIcon}>
-        UI/UX
-      </Button>
-    </NavSection>
-  );
-};
+const NavLabels = () => (
+  <NavSection className="nav-section__labels" title="Labels">
+    <Button type="text">
+      <LabelIcon className={styles['label--color1']} />
+      Design
+    </Button>
+    <Button type="text">
+      <LabelIcon className={styles['label--color2']} />
+      Web Elements
+    </Button>
+    <Button type="text">
+      <LabelIcon className={styles['label--color3']} />
+      Mobile
+    </Button>
+    <Button type="text">
+      <LabelIcon className={styles['label--color4']} />
+      Application
+    </Button>
+    <Button type="text">
+      <LabelIcon className={styles['label--color5']} />
+      UI/UX
+    </Button>
+  </NavSection>
+);
 
 export {NavMain, NavAlso, NavLabels};
