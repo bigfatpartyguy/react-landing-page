@@ -1,4 +1,4 @@
-@import '../../../assets/scss/colors/colors';
+@import '../../../assets/scss/variables/colors';
 
 .label {
   @each $color in $labels {

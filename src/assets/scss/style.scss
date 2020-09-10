@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira??+Sans:wght@400;500;600&display=swap');
+@import 'variables/typography';
+@import 'variables/colors';
 
-@import 'colors/colors';
 @import 'mixins/mixins';
 
 @import './elements/buttons';
+
+@import url($font--url);
 
 html {
   box-sizing: border-box;
@@ -16,7 +18,7 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
+  font-size: map-get($font--size, base);
   font-weight: 500;
 }
 

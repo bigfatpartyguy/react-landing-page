@@ -4,10 +4,7 @@ button {
   align-items: center;
   font-size: inherit;
   font-weight: inherit;
+  padding: 0;
   cursor: pointer;
   @include theme-btn;
-
-  img {
-    margin-right: 10px;
-  }
 }

@@ -1,11 +1,18 @@
-@import '../../../assets/scss/colors/colors';
+@import '../../../assets/scss/variables/colors';
+@import '../../../assets/scss/variables/typography';
 
 .nav-section {
+  padding: 20px;
   .nav-section__title {
     color: map-get($nav, section-title);
+    text-align: left;
+    margin: 11px 0;
+    line-height: map-get($font--size, base);
   }
 
   .nav-section__link-block {
     list-style: none;
+    text-align: left;
+    padding: 0;
   }
 }
