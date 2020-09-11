@@ -9,6 +9,7 @@
 
 html {
   box-sizing: border-box;
+  height: 100vh;
 }
 
 body {
@@ -20,6 +21,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: map-get($font--size, base);
   font-weight: 500;
+  height: 100vh;
+  #root {
+    height: 100vh;
+  }
 }
 
 *,

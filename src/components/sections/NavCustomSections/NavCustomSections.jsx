@@ -13,55 +13,76 @@ import {ReactComponent as LabelIcon} from '../../../assets/images/Circle.svg';
 import styles from './NavCustomSections.module.scss';
 
 const NavMain = () => (
-  <NavSection title="Main">
-    <Button type="text" icon={<Image src={fileLogo} alt="file icon" />}>
+  <NavSection title="Main" itemsSpacing="12px">
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={fileLogo} alt="file icon" />}>
       Files
     </Button>
-    <Button type="text" icon={<Image src={photoIcon} alt="photo icon" />}>
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={photoIcon} alt="photo icon" />}>
       Photos
     </Button>
-    <Button type="text" icon={<Image src={sharingIcon} alt="sharing icon" />}>
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={sharingIcon} alt="sharing icon" />}>
       Sharing
     </Button>
-    <Button type="text" icon={<Image src={linkIcon} alt="links icon" />}>
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={linkIcon} alt="links icon" />}>
       Links
     </Button>
-    <Button type="text" icon={<Image src={calendarIcon} alt="calendar icon" />}>
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={calendarIcon} alt="calendar icon" />}>
       Events
     </Button>
   </NavSection>
 );
 
 const NavAlso = () => (
-  <NavSection title="Also from Dropbox">
-    <Button type="text" icon={<Image src={carouselIcon} alt="carousel icon" />}>
+  <NavSection title="Also from Dropbox" itemsSpacing="6px">
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={carouselIcon} alt="carousel icon" />}>
       Carousel
     </Button>
-    <Button type="text" icon={<Image src={mailboxIcon} alt="mailbox icon" />}>
+    <Button
+      className="btn-icon-text"
+      type="text"
+      icon={<Image src={mailboxIcon} alt="mailbox icon" />}>
       Mailbox
     </Button>
   </NavSection>
 );
 
 const NavLabels = () => (
-  <NavSection className="nav-section__labels" title="Labels">
-    <Button type="text">
+  <NavSection title="Labels">
+    <Button className="btn-icon-text" type="text">
       <LabelIcon className={styles['label--color1']} />
       Design
     </Button>
-    <Button type="text">
+    <Button className="btn-icon-text" type="text">
       <LabelIcon className={styles['label--color2']} />
       Web Elements
     </Button>
-    <Button type="text">
+    <Button className="btn-icon-text" type="text">
       <LabelIcon className={styles['label--color3']} />
       Mobile
     </Button>
-    <Button type="text">
+    <Button className="btn-icon-text" type="text">
       <LabelIcon className={styles['label--color4']} />
       Application
     </Button>
-    <Button type="text">
+    <Button className="btn-icon-text" type="text">
       <LabelIcon className={styles['label--color5']} />
       UI/UX
     </Button>

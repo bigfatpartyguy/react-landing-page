@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import styles from './NavSection.module.scss';
 
 // eslint-disable-next-line react/prop-types
-const NavSection = ({title, children}) => {
+const NavSection = ({title, children, itemsSpacing}) => {
   return (
     <section className={styles['nav-section']}>
       <p className={styles['nav-section__title']}>{title}</p>
       {children && Array.isArray(children) ? (
         <ul className={styles['nav-section__link-block']}>
           {/* eslint-disable-next-line react/prop-types */}
-          {children.map(child => (
-            <li>{child}</li>
+          {children.map((child, i, arr) => (
+            <li style={i + 1 < arr.length ? {marginBottom: itemsSpacing} : {}}>
+              {child}
+            </li>
           ))}
         </ul>
       ) : (

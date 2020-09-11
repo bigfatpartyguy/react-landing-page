@@ -8,9 +8,7 @@ const Button = ({className, disabled, icon, type, onClick, children}) => {
   let iconContainer;
   if (icon || Array.isArray(children)) {
     iconContainer = (
-      <span className={styles['btn-icon__icon-container']}>
-        {icon || children[0]}
-      </span>
+      <span className={styles['icon-container']}>{icon || children[0]}</span>
     );
   }
   return (
