@@ -17,9 +17,12 @@ const CustomNav = () => {
         <NavLabels />
       </div>
       <section className={styles['nav-footer']}>
-        <ProgressBar id="progress-storage" max="2" value="1.2">
-          %value gb of %max gb is used
-        </ProgressBar>
+        <ProgressBar
+          id="progress-storage"
+          max="2"
+          value="1.2"
+          labelText="%value gb of %max gb is used"
+        />
       </section>
     </Nav>
   );

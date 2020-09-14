@@ -3,20 +3,27 @@
 .progress-bar__label {
   display: inline-block;
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 15px 0 5px;
   color: map-get($progress-bar, label);
 }
 
 .progress-bar__bar {
   &[value] {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
+
+    border: none;
 
     width: 160px;
     height: 8px;
+    background-color: map-get($progress-bar, container);
 
     &::-webkit-progress-bar {
       background-color: map-get($progress-bar, container);
+    }
+    &::-moz-progress-bar {
+      background-color: map-get($progress-bar, value);
     }
     &::-webkit-progress-value {
       background-color: map-get($progress-bar, value);

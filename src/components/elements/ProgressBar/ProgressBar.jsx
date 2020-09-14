@@ -2,12 +2,12 @@
 import React from 'react';
 import styles from './ProgressBar.module.scss';
 
-const ProgressBar = ({max, value, id, children}) => {
+const ProgressBar = ({max, value, id, labelText}) => {
   return (
     <>
-      {children && (
+      {labelText && (
         <label className={styles['progress-bar__label']} htmlFor={id}>
-          {children.replace(/%value/, value).replace(/%max/, max)}
+          {labelText.replace(/%value/, value).replace(/%max/, max)}
         </label>
       )}
       <progress
