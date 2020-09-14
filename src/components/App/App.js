@@ -1,8 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from '../layout/Header';
-import Nav from '../layout/Nav';
-import {NavMain, NavAlso, NavLabels} from '../sections/NavCustomSections';
+import Nav from '../layout/Nav/CustomNav';
 import styles from './App.module.scss';
 
 function App() {
@@ -10,14 +9,10 @@ function App() {
     <Switch>
       <Route path="/">
         <div className={styles.App}>
-          <Header />
+          <Nav />
           <div className={styles.container}>
-            <Nav>
-              <NavMain />
-              <NavAlso />
-              <NavLabels />
-            </Nav>
-            <main>some content</main>
+            <Header />
+            <main className={styles.main}>some content</main>
           </div>
         </div>
       </Route>

@@ -1,0 +1,22 @@
+.logo {
+  width: 100%;
+}
+
+.nav-panel {
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.nav-footer {
+  padding-top: 20px;
+  flex-basis: 80px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  p {
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+}

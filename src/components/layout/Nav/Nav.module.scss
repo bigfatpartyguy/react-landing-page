@@ -1,8 +1,11 @@
 @import '../../../assets/scss/variables/colors';
 
 .nav {
-  height: 100%;
   width: 220px;
+  min-width: 220px;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   background: map-get($nav, bg);
-  overflow-y: auto;
 }

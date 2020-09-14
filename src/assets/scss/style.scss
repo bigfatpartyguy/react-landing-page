@@ -21,9 +21,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: map-get($font--size, base);
   font-weight: 500;
-  height: 100vh;
+  height: 100%;
   #root {
-    height: 100vh;
+    height: 100%;
   }
 }
 

@@ -5,7 +5,6 @@ import logo from '../../../../assets/images/logo.svg';
 import styles from './Logo.module.scss';
 
 const Logo = () => {
-  console.log('logo');
   return (
     <div className={styles.logo}>
       <Link to="/">
