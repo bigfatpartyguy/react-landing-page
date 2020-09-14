@@ -11,12 +11,12 @@
 }
 
 .nav-footer {
-  padding-top: 20px;
-  flex-basis: 80px;
+  // padding-top: 20px;
+  flex-basis: 100px;
   flex-shrink: 0;
   flex-grow: 0;
   p {
-    margin-top: 0;
+    margin-top: 10px;
     text-transform: uppercase;
   }
 }

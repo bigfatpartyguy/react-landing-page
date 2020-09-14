@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../Nav';
 import Logo from '../../partials/Logo';
 import {NavMain, NavAlso, NavLabels} from '../../../sections/NavCustomSections';
+import ProgressBar from '../../../elements/ProgressBar';
 import styles from './CustomNav.module.scss';
 
 const CustomNav = () => {
@@ -16,7 +17,9 @@ const CustomNav = () => {
         <NavLabels />
       </div>
       <section className={styles['nav-footer']}>
-        <p>1.2gb of 2gb is used</p>
+        <ProgressBar id="progress-storage" max="2" value="1.2">
+          %value gb of %max gb is used
+        </ProgressBar>
       </section>
     </Nav>
   );

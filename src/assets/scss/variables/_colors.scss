@@ -1,7 +1,25 @@
 /* use maps to store element-specific colors */
 
+$colors: (
+  1: #505155,
+  2: #8a8a8a,
+  3: #c1c1c1,
+  4: #9d9d9d,
+  5: #3f4044,
+  6: #ededed,
+  7: #d5d5d5,
+  8: #999999,
+  9: #929292,
+  10: #919191,
+  11: #888888,
+  12: #737376,
+  13: #676767,
+  14: #505155,
+  15: #007be8,
+);
+
 $btn-text: (
-  default: #8a8a8a,
+  default: map-get($colors, 2),
 );
 
 $btn-bg: (
@@ -14,7 +32,13 @@ $btn-border: (
 
 $nav: (
   bg: #f4f4f4,
-  section-title: #c1c1c1,
+  section-title: map-get($colors, 3),
+);
+
+$progress-bar: (
+  label: map-get($colors, 2),
+  value: map-get($colors, 15),
+  container: map-get($colors, 7),
 );
 
 $labels: (

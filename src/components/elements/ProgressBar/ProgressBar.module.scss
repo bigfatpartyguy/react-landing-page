@@ -1,0 +1,25 @@
+@import '../../../assets/scss/variables/colors';
+
+.progress-bar__label {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: map-get($progress-bar, label);
+}
+
+.progress-bar__bar {
+  &[value] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 160px;
+    height: 8px;
+
+    &::-webkit-progress-bar {
+      background-color: map-get($progress-bar, container);
+    }
+    &::-webkit-progress-value {
+      background-color: map-get($progress-bar, value);
+    }
+  }
+}
