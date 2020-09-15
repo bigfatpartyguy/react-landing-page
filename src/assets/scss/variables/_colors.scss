@@ -48,3 +48,8 @@ $labels: (
   4: #ba61f2,
   5: #e9d33c,
 );
+
+$input-search: (
+  bg: map-get($colors, 14),
+  text: map-get($colors, 9),
+);

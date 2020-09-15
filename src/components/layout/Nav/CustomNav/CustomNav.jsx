@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../Nav';
-import Logo from '../../partials/Logo';
+import Logo from '../../Logo';
 import {NavMain, NavAlso, NavLabels} from '../../../sections/NavCustomSections';
 import ProgressBar from '../../../elements/ProgressBar';
 import styles from './CustomNav.module.scss';
