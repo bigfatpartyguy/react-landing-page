@@ -1,9 +1,21 @@
-$bg-color: #3f4044;
+@import '../../../assets/scss/variables/colors';
+@import '../../../assets/scss/mixins/mixins';
+$themes: dark light;
 
-.header-main {
+.header {
   width: 100%;
+  padding: 0 30px;
   height: 80px;
   display: flex;
   align-items: center;
-  background-color: $bg-color;
+
+  &--slim {
+    height: 59px;
+  }
+
+  @each $theme in $themes {
+    &--#{$theme} {
+      @include theme-header($theme);
+    }
+  }
 }

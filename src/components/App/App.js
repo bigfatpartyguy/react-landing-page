@@ -12,14 +12,16 @@ function App() {
         <div className={styles.App}>
           <Nav />
           <div className={styles.container}>
-            <Header>
+            <Header className="header--dark">
               <Input
                 className="input-search"
                 type="search"
                 placeholder="Type to search..."
               />
             </Header>
-            <main className={styles.main}>some content</main>
+            <main className={styles.main}>
+              <Header className="header--light header--slim">content</Header>
+            </main>
           </div>
         </div>
       </Route>

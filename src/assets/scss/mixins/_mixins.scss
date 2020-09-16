@@ -3,3 +3,22 @@
   background: map-get($btn-bg, $bg);
   border: map-get($btn-border, $border);
 }
+
+@mixin theme-header($theme) {
+  background-color: map-get(map-get($header, $theme), bg);
+
+  @if $theme == light {
+    position: relative;
+    &::after {
+      $border: 'border';
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 95%;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: map-get(map-get($header, $theme), border);
+    }
+  }
+}

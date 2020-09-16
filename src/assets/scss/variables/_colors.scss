@@ -16,6 +16,7 @@ $colors: (
   13: #676767,
   14: #505155,
   15: #007be8,
+  16: #ffffff,
 );
 
 $btn-text: (
@@ -52,4 +53,14 @@ $labels: (
 $input-search: (
   bg: map-get($colors, 14),
   text: map-get($colors, 9),
+);
+
+$header: (
+  dark: (
+    bg: map-get($colors, 5),
+  ),
+  light: (
+    bg: map-get($colors, 16),
+    border: map-get($colors, 6),
+  ),
 );
