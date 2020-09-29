@@ -12,7 +12,7 @@ function App() {
         <div className={styles.App}>
           <Nav />
           <div className={styles.container}>
-            <Header className="header--dark">
+            <Header theme="header--dark">
               <Input
                 className="input-search"
                 type="search"
@@ -20,7 +20,9 @@ function App() {
               />
             </Header>
             <main className={styles.main}>
-              <Header className="header--light header--slim">content</Header>
+              <Header theme="header--light" size="header--slim">
+                content
+              </Header>
             </main>
           </div>
         </div>
