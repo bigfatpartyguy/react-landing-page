@@ -20,7 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: map-get($font--size, base);
-  font-weight: 500;
+  font-weight: map-get($font--weight, base);
   height: 100%;
   #root {
     height: 100%;

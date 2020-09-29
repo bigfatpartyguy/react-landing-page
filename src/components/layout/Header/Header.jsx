@@ -6,8 +6,8 @@ import styles from './Header.module.scss';
 const Header = ({children, theme, size}) => {
   const classes = classNames(
     styles.header,
-    theme && styles[theme],
-    size && styles[size]
+    theme && styles[`header--${theme}`],
+    size && styles[`header--${size}`]
   );
   return <header className={classes}>{children}</header>;
 };

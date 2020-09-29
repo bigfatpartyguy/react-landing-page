@@ -17,6 +17,7 @@ $colors: (
   14: #505155,
   15: #007be8,
   16: #ffffff,
+  17: #0a8df3,
 );
 
 $btn-text: (
@@ -48,6 +49,11 @@ $labels: (
   3: #088bd6,
   4: #ba61f2,
   5: #e9d33c,
+);
+
+$view-icon: (
+  default: map-get($colors, 13),
+  active: map-get($colors, 17),
 );
 
 $input-search: (

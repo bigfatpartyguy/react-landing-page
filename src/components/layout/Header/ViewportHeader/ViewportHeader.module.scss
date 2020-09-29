@@ -1,0 +1,33 @@
+@import '../../../../assets/scss/variables/typography';
+@import '../../../../assets/scss/variables/colors';
+
+.viewport-header__container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  .viewport-header__menu {
+    *:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  .viewport-header__info {
+    margin-left: 47px;
+    font-size: map-get($font--size, info);
+    font-weight: map-get($font--weight, info);
+  }
+
+  .viewport-header__display-options {
+    margin-left: auto;
+    *:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__icon {
+      path {
+        fill: map-get($view-icon, default);
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Header from '../layout/Header';
-import Input from '../elements/Input/SearchInput';
+import AppHeader from '../layout/Header/AppHeader';
+import ViewportHeader from '../layout/Header/ViewportHeader';
 import Nav from '../layout/Nav/CustomNav';
 import styles from './App.module.scss';
 
@@ -12,17 +12,9 @@ function App() {
         <div className={styles.App}>
           <Nav />
           <div className={styles.container}>
-            <Header theme="header--dark">
-              <Input
-                className="input-search"
-                type="search"
-                placeholder="Type to search..."
-              />
-            </Header>
+            <AppHeader />
             <main className={styles.main}>
-              <Header theme="header--light" size="header--slim">
-                content
-              </Header>
+              <ViewportHeader info="You have selected 2 items" />
             </main>
           </div>
         </div>
