@@ -3,7 +3,6 @@ import styles from './Image.module.scss';
 
 // eslint-disable-next-line react/prop-types
 const Image = ({src, alt, width, height, className}) => {
-  console.log(src);
   return (
     <img
       src={src}
