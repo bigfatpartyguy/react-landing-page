@@ -1,6 +1,8 @@
 @import '../../../assets/scss/variables/colors';
+@import '../../../assets/scss/variables/typography';
 
 .card {
+  font-size: 0;
   width: 212px;
   height: 229px;
   display: flex;
@@ -8,26 +10,52 @@
   align-items: center;
   border-radius: 2px;
   padding: 10px;
-  background: map-get($card, bg);
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: map-get($card, bg);
+  }
 
   .card__image {
     width: 100%;
     height: 160px;
   }
 
-  .card__data {
+  .card__info {
+    width: 100%;
+    padding-top: 13px;
+    text-align: left;
+    font-size: map-get($font--size, base);
     .card__filename {
+      margin: 0;
       color: map-get($card, filename);
     }
 
-    .card__footer {
+    .card__info__footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7px;
+      font-size: 0;
       .card__meta {
         color: map-get($card, meta-info);
-        font-size: 12px;
+        font-size: map-get($font--size, info);
+        font-weight: map-get($font--weight, info);
       }
 
       .card__options-button {
-        background-color: map-get($card, options);
+        font-size: 0;
+        margin-right: -8px;
+        padding: 7px;
+        display: inline-block;
+
+        &:hover {
+          background-color: map-get($card, options__bg);
+          border-radius: 2px;
+        }
+        .options__icon {
+          path {
+            fill: map-get($card, options);
+          }
+        }
       }
     }
   }

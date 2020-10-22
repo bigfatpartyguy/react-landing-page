@@ -18,6 +18,7 @@ $colors: (
   15: #007be8,
   16: #ffffff,
   17: #0a8df3,
+  18: #f4f4f4,
 );
 
 $btn-text: (
@@ -76,4 +77,5 @@ $card: (
   filename: map-get($colors, 1),
   meta-info: map-get($colors, 4),
   options: map-get($colors, 7),
+  options__bg: map-get($colors, 18),
 );

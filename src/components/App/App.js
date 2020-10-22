@@ -21,7 +21,7 @@ function App() {
               <section className={styles.main__content}>
                 <Card
                   image={<Image src={file01} />}
-                  filename="dropbox-logo.jpg"
+                  filename="Dropbox-logo.jpg"
                   meta="Jul 22, 110.2KB"
                 />
               </section>
