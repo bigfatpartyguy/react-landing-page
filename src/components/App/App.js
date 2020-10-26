@@ -6,7 +6,7 @@ import Nav from '../layout/Nav/CustomNav';
 import styles from './App.module.scss';
 import Card from '../elements/Card/Card';
 import Image from '../elements/Image/Image';
-import file01 from '../../assets/images/Img_01.png';
+import {cardsData} from '../../data';
 
 function App() {
   return (
@@ -17,13 +17,18 @@ function App() {
           <div className={styles.container}>
             <AppHeader />
             <main className={styles.main}>
-              <ViewportHeader info="You have selected 2 items" />
+              <div className={styles['main__header-fixed']}>
+                <ViewportHeader info="You have selected 2 items" />
+              </div>
               <section className={styles.main__content}>
-                <Card
-                  image={<Image src={file01} />}
-                  filename="Dropbox-logo.jpg"
-                  meta="Jul 22, 110.2KB"
-                />
+                {cardsData.map(card => (
+                  <Card
+                    image={<Image src={card.img} />}
+                    filename={card.filename}
+                    date={card.date}
+                    size={card.size}
+                  />
+                ))}
               </section>
             </main>
           </div>

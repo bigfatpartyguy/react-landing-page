@@ -4,7 +4,9 @@
 .card {
   font-size: 0;
   width: 212px;
+  max-width: 212px;
   height: 229px;
+  max-height: 229px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;

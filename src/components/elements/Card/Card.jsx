@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import {ReactComponent as OptIcon} from '../../../assets/images/Opt_Icon.svg';
 import styles from './Card.module.scss';
 
-const Card = ({image, filename, meta}) => (
+const Card = ({image, filename, date, size}) => (
   <div className={styles.card}>
     <div className={styles.card__image}>{image}</div>
     <div className={styles.card__info}>
       <p className={styles.card__filename}>{filename}</p>
       <div className={styles.card__info__footer}>
-        <span className={styles.card__meta}>{meta}</span>
+        <span className={styles.card__meta}>{`${date}, ${size}`}</span>
         <div
           tabIndex="0"
           role="button"
