@@ -52,6 +52,10 @@ $labels: (
   5: #e9d33c,
 );
 
+$main-content: (
+  bg: map-get($colors, 16),
+);
+
 $view-icon: (
   default: map-get($colors, 13),
   active: map-get($colors, 17),
