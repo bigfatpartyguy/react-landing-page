@@ -1,12 +1,16 @@
 @import '../../../assets/scss/variables/colors';
 @import '../../../assets/scss/variables/typography';
+@import '../../../assets/scss/variables/media';
+@import '../../../assets/scss/mixins/mixins';
 
 .card {
   font-size: 0;
   min-width: 212px;
-  width: calc(25% - 10px);
+  width: 212px;
+  max-width: 280px;
+  height: 229px;
+  max-height: 290px;
   margin: 5px;
-  height: auto;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -15,6 +19,16 @@
   transition: background-color 0.3s ease;
   &:hover {
     background-color: map-get($card, bg);
+  }
+  &--fluid {
+    width: 100%;
+    height: auto;
+
+    @each $query in $cards-media {
+      @include media-min(nth($query, 2)) {
+        width: calc((100% / #{nth($query, 1)}) - 10px);
+      }
+    }
   }
 
   .card__image {

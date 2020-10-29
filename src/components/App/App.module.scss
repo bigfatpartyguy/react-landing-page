@@ -1,4 +1,6 @@
 @import '../../assets/scss/variables/colors';
+@import '../../assets/scss/variables/media';
+@import '../../assets/scss/mixins/mixins';
 
 .App {
   text-align: center;
@@ -31,6 +33,11 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
+        align-content: flex-start;
+
+        @include media-max(map-get($cards-media, 2) - 1) {
+          justify-content: center;
+        }
       }
     }
   }

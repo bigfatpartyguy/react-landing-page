@@ -26,7 +26,8 @@ function App() {
                     image={<Image src={card.img} />}
                     filename={card.filename}
                     date={card.date}
-                    size={card.size}
+                    filesize={card.size}
+                    fluid
                   />
                 ))}
               </section>
