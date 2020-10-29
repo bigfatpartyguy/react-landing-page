@@ -23,6 +23,7 @@ function App() {
               <section className={styles.main__content}>
                 {cardsData.map(card => (
                   <Card
+                    key={card.id}
                     image={<Image src={card.img} />}
                     filename={card.filename}
                     date={card.date}

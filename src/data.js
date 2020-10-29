@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid';
 import img01 from './assets/images/Img_01.png';
 import img02 from './assets/images/Img_02.png';
 import img03 from './assets/images/Img_03.png';
@@ -61,3 +62,8 @@ export const cardsData = [
   {img: img14, filename: 'Web Design.jpg', date: 'Jun 23', size: '982.2 KB'},
   {img: img15, filename: 'dribble fun.jpg', date: 'Oct 05', size: '50.2 KB'},
 ];
+
+cardsData.forEach(card => {
+  // eslint-disable-next-line
+  card.id = uuidv4();
+});
