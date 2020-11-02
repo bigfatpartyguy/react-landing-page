@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {ReactComponent as OptIcon} from '../../../assets/images/Opt_Icon.svg';
 import styles from './Card.module.scss';
 
 const Card = ({image, filename, date, filesize, fluid}) => {
+  const [selected, setSelected] = useState(false);
   const classes = classNames(styles.card, fluid && styles['card--fluid']);
+  const onClick = e => {
+    setSelected(!selected);
+    e.currentTarget.classList.toggle(styles['card--selected']);
+  };
   return (
-    <div className={classes}>
+    <div
+      className={classes}
+      role="checkbox"
+      aria-checked={selected}
+      tabIndex="0"
+      onClick={onClick}
+      onKeyPress={onClick}>
       <div className={styles.card__image}>{image}</div>
       <div className={styles.card__info}>
         <p className={styles.card__filename}>{filename}</p>
