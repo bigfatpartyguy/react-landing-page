@@ -17,9 +17,7 @@ function App() {
           <div className={styles.container}>
             <AppHeader />
             <main className={styles.main}>
-              <div className={styles['main__header-fixed']}>
-                <ViewportHeader info="You have selected 2 items" />
-              </div>
+              <ViewportHeader info="You have selected 2 items" />
               <section className={styles.main__content}>
                 {cardsData.map(card => (
                   <Card

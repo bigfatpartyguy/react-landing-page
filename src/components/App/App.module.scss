@@ -15,11 +15,8 @@
     width: 100%;
     height: 100%;
     .main {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      padding-top: 59px;
+      @extend .container;
+      overflow: hidden;
 
       .main__header-fixed {
         width: 100%;
@@ -28,10 +25,10 @@
         left: 0;
       }
       .main__content {
-        height: 100%;
-        padding: 20px;
-        display: flex;
+        @extend .container;
         flex-flow: row wrap;
+        overflow-y: auto;
+        padding: 20px;
         justify-content: flex-start;
         align-content: flex-start;
 
