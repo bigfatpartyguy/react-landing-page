@@ -6,10 +6,13 @@ import styles from './Card.module.scss';
 
 const Card = ({image, filename, date, filesize, fluid}) => {
   const [selected, setSelected] = useState(false);
-  const classes = classNames(styles.card, fluid && styles['card--fluid']);
+  const classes = classNames(
+    styles.card,
+    fluid && styles['card--fluid'],
+    selected && styles['card--selected']
+  );
   const onClick = e => {
     setSelected(!selected);
-    e.currentTarget.classList.toggle(styles['card--selected']);
   };
   return (
     <div
@@ -17,6 +20,8 @@ const Card = ({image, filename, date, filesize, fluid}) => {
       role="checkbox"
       aria-checked={selected}
       tabIndex="0"
+      onDragStart={e => e.preventDefault()}
+      onMouseDown={e => e.preventDefault()}
       onClick={onClick}
       onKeyPress={onClick}>
       <div className={styles.card__image}>{image}</div>
