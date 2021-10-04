@@ -1,11 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "react-app",
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react"
-  ],
+  "extends": ["eslint:recommended", "react-app", "prettier"],
   "rules": {
     "jsx-a11y/label-has-associated-control": [
       2,
