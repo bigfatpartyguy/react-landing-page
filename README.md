@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Landing Page
+
+![screenshot](./landing-page_banner.png)
+\*Not the final look
+
+## About
+
+This project was made solely for learning purposes in order to gain a deeper understanding of React ans SASS.
+
+> 🚨 The project is a work in progress.
+
 ## Available Scripts
 
 In the project directory, you can run:
