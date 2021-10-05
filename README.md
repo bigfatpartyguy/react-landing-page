@@ -11,6 +11,10 @@ This project was made solely for learning purposes in order to gain a deeper und
 
 > 🚨 The project is a work in progress.
 
+## Acknowledgements
+
+- [Muhammad Asad](https://www.behance.net/gallery/27742991/Redesing-Dropbox): App design/mockup
+
 ## Available Scripts
 
 In the project directory, you can run:

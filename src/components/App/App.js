@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import AppHeader from '../layout/Header/AppHeader';
 import ViewportHeader from '../layout/Header/ViewportHeader';
 import Nav from '../layout/Nav/CustomNav';
