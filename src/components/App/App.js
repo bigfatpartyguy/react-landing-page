@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import AppHeader from '../layout/Header/AppHeader';
 import ViewportHeader from '../layout/Header/ViewportHeader';
@@ -6,9 +6,14 @@ import Nav from '../layout/Nav/CustomNav';
 import styles from './App.module.scss';
 import Card from '../elements/Card/Card';
 import Image from '../elements/Image/Image';
-import {cardsData} from '../../data';
 
 function App() {
+  const [cards, setCards] = useState([]);
+  useEffect(() => {
+    fetch('api/cards')
+      .then(response => response.json())
+      .then(cards => setCards(cards));
+  }, []);
   return (
     <Switch>
       <Route path="/">
@@ -19,7 +24,7 @@ function App() {
             <main className={styles.main}>
               <ViewportHeader info="You have selected 2 items" />
               <section className={styles.main__content}>
-                {cardsData.map(card => (
+                {cards.map(card => (
                   <Card
                     key={card.id}
                     image={<Image src={card.img} />}
