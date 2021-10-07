@@ -4,15 +4,22 @@ import classNames from 'classnames';
 import {ReactComponent as OptIcon} from '../../../assets/images/Opt_Icon.svg';
 import styles from './Card.module.scss';
 
-const Card = ({image, filename, date, filesize, fluid}) => {
-  const [selected, setSelected] = useState(false);
+const Card = ({
+  image,
+  filename,
+  date,
+  filesize,
+  fluid,
+  selected,
+  handleSelectDeselect,
+}) => {
   const classes = classNames(
     styles.card,
     fluid && styles['card--fluid'],
     selected && styles['card--selected']
   );
   const onClick = e => {
-    setSelected(!selected);
+    handleSelectDeselect();
   };
   return (
     <div

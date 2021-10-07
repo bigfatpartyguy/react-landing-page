@@ -11,7 +11,7 @@ import {ReactComponent as ListViewIcon} from '../../../../assets/images/List_Vie
 import {ReactComponent as DetailViewIcon} from '../../../../assets/images/Detail_View.svg';
 import styles from './ViewportHeader.module.scss';
 
-const ViewportHeader = ({info}) => (
+const ViewportHeader = ({count}) => (
   <Header theme="light" size="slim">
     <div className={styles['viewport-header__container']}>
       <section className={styles['viewport-header__menu']}>
@@ -40,7 +40,13 @@ const ViewportHeader = ({info}) => (
           Trash
         </Button>
       </section>
-      {info && <p className={styles['viewport-header__info']}>{info}</p>}
+      {count > 0 ? (
+        <p className={styles['viewport-header__info']}>
+          You have selected {count} items
+        </p>
+      ) : (
+        ''
+      )}
       <section className={styles['viewport-header__display-options']}>
         <Button className="btn-icon-text">
           <ThumbViewIcon
