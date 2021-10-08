@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
+import classNames from 'classnames';
 
 // eslint-disable-next-line react/prop-types
 const Button = ({className, disabled, icon, type, onClick, children}) => {
@@ -11,10 +12,13 @@ const Button = ({className, disabled, icon, type, onClick, children}) => {
       <span className={styles['icon-container']}>{icon || children[0]}</span>
     );
   }
+  const classnames = classNames(
+    ...className.split(' ').map(name => styles[name])
+  );
   return (
     // eslint-disable-next-line react/button-has-type
     <button
-      className={styles[className]}
+      className={classnames}
       disabled={disabled}
       type={type}
       onClick={onClick}>

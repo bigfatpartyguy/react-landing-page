@@ -80,6 +80,7 @@
         margin-right: -8px;
         padding: 7px;
         display: inline-block;
+        position: relative;
 
         &:hover {
           background-color: map-get($card, options__bg);

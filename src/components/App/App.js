@@ -1,18 +1,20 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import AppHeader from '../layout/Header/AppHeader';
 import ViewportHeader from '../layout/Header/ViewportHeader';
 import Nav from '../layout/Nav/CustomNav';
 import styles from './App.module.scss';
 import Card from '../elements/Card/Card';
-import Image from '../elements/Image/Image';
 import {addSelectedField} from '../../helpers/helpers';
+
+const CardContext = React.createContext();
 
 function App() {
   const [cards, setCards] = useState([]);
   const [selectedCount, setSelectedCount] = useState(0);
 
   useEffect(() => {
+    console.log('call');
     fetch('api/cards')
       .then(response => response.json())
       .then(cards => setCards(addSelectedField(cards)));
@@ -38,6 +40,10 @@ function App() {
     );
   };
 
+  const deleteCard = id => {
+    setCards(prevCards => prevCards.filter(card => card.id !== id));
+  };
+
   return (
     <Switch>
       <Route path="/">
@@ -51,13 +57,9 @@ function App() {
                 {cards.map(card => (
                   <Card
                     key={card.id}
-                    image={<Image src={card.img} />}
-                    filename={card.filename}
-                    date={card.date}
-                    filesize={card.size}
                     fluid
-                    selected={card.selected}
-                    handleSelectDeselect={() => selectDeselectCard(card.id)}
+                    cardInfo={card}
+                    handleSelectDeselect={selectDeselectCard}
                   />
                 ))}
               </section>

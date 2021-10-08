@@ -1,5 +1,10 @@
 .btn-icon-text {
   padding: 10px 0;
+
+  &.light-text {
+    font-weight: normal;
+  }
+
   .icon-container {
     width: 36px;
     display: flex;

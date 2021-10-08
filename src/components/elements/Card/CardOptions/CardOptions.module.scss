@@ -1,0 +1,21 @@
+@import '../../../../assets/scss/variables/typography';
+@import '../../../../assets/scss/variables/colors';
+
+.card-options {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 1;
+  background-color: map-get($card, options__bg);
+  width: 205px;
+  font-size: map-get($font--size, base);
+
+  &_left {
+    @extend .card-options;
+    left: unset;
+    right: 0;
+  }
+}
