@@ -17,7 +17,10 @@ const CardOptions = ({handleShare, handleDownload, handleDelete, position}) => {
         <DownloadIcon />
         Download as .zip
       </Button>
-      <Button className="btn-icon-text light-text" type="text">
+      <Button
+        className="btn-icon-text light-text"
+        type="text"
+        onClick={handleDelete}>
         <DeleteIcon />
         Delete
       </Button>

@@ -17,10 +17,11 @@
   border-radius: 2px;
   padding: 10px;
   transition: background-color 0.3s ease;
-  &:hover {
+  &_hover {
+    @extend .card;
     background-color: map-get($card, bg);
   }
-  &--fluid {
+  &_fluid {
     width: 100%;
     height: auto;
 
@@ -42,7 +43,7 @@
     }
   }
 
-  &.card--selected {
+  &.card_selected {
     .card__image::after {
       position: absolute;
       content: '';

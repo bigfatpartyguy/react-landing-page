@@ -41,6 +41,13 @@ function App() {
   };
 
   const deleteCard = id => {
+    const card = cards.find(card => card.id === id);
+    setSelectedCount(prevCount => {
+      if (card.selected) {
+        return prevCount - 1;
+      }
+      return prevCount;
+    });
     setCards(prevCards => prevCards.filter(card => card.id !== id));
   };
 
@@ -60,6 +67,7 @@ function App() {
                     fluid
                     cardInfo={card}
                     handleSelectDeselect={selectDeselectCard}
+                    handleDelete={deleteCard}
                   />
                 ))}
               </section>

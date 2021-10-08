@@ -6,14 +6,15 @@ import CardOptions from './CardOptions';
 import Image from '../Image';
 import styles from './Card.module.scss';
 
-const Card = ({cardInfo, fluid, handleSelectDeselect}) => {
+const Card = ({cardInfo, fluid, handleSelectDeselect, handleDelete}) => {
   const {filename, img, date, size: filesize, selected, id} = cardInfo;
   const [optOpen, setOptOpen] = useState(false);
   const [optMenuPosition, setOptMenuPosition] = useState('right');
+  const [cardHover, setCardHover] = useState(false);
   const classes = classNames(
-    styles.card,
-    fluid && styles['card--fluid'],
-    selected && styles['card--selected']
+    styles[`card${cardHover ? '_hover' : ''}`],
+    fluid && styles['card_fluid'],
+    selected && styles['card_selected']
   );
   const onClick = e => {
     handleSelectDeselect(id);
@@ -34,7 +35,20 @@ const Card = ({cardInfo, fluid, handleSelectDeselect}) => {
     setOptOpen(prev => !prev);
   };
 
-  const handleMouseLeave = () => {
+  const handleCardMouseEnter = () => {
+    setCardHover(true);
+  };
+
+  const handleCardMouseLeave = () => {
+    setCardHover(false);
+  };
+
+  const handleOptBtnMouseEnter = () => {
+    setCardHover(false);
+  };
+
+  const handleOptBtnMouseLeave = () => {
+    setCardHover(true);
     setOptOpen(false);
   };
 
@@ -44,6 +58,8 @@ const Card = ({cardInfo, fluid, handleSelectDeselect}) => {
       role="checkbox"
       aria-checked={selected}
       tabIndex="0"
+      onMouseEnter={handleCardMouseEnter}
+      onMouseLeave={handleCardMouseLeave}
       onDragStart={e => e.preventDefault()}
       onMouseDown={e => e.preventDefault()}
       onClick={onClick}
@@ -56,14 +72,20 @@ const Card = ({cardInfo, fluid, handleSelectDeselect}) => {
         <div className={styles.card__info__footer}>
           <span className={styles.card__meta}>{`${date}, ${filesize}`}</span>
           <div
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleOptBtnMouseEnter}
+            onMouseLeave={handleOptBtnMouseLeave}
             onClick={handleOptionsClick}
             tabIndex="0"
             role="button"
             aria-label="options"
             className={styles['card__options-button']}>
             <OptIcon className={styles.options__icon} />
-            {optOpen && <CardOptions position={optMenuPosition} />}
+            {optOpen && (
+              <CardOptions
+                position={optMenuPosition}
+                handleDelete={() => handleDelete(id)}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -77,8 +99,9 @@ const areEqual = (prevProps, nextProps) => {
   */
   let falseCounter = 0;
   for (let key in prevProps) {
-    // Just skip the handler function
-    if (key === 'handleSelectDeselect') {
+    // I know it isn't right, but...
+    // just skip handler functions
+    if (typeof key === 'function') {
       continue;
     }
     falseCounter += Object.is(prevProps[key], nextProps[key]) ? 0 : 1;
