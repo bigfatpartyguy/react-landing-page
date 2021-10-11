@@ -1,5 +1,19 @@
+@import '../../../assets/scss/variables/colors';
+@import '../../../assets/scss/variables/typography';
+@import '../../../assets/scss/mixins/mixins';
+
 .btn-icon-text {
   padding: 10px 0;
+
+  &_full-width {
+    @extend .btn-icon-text;
+    width: 100%;
+    justify-content: flex-start;
+
+    &:hover {
+      @include theme-btn($text: hover, $bg: hover);
+    }
+  }
 
   &.light-text {
     font-weight: normal;

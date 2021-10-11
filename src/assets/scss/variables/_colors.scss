@@ -23,10 +23,12 @@ $colors: (
 
 $btn-text: (
   default: map-get($colors, 2),
+  hover: map-get($colors, 5),
 );
 
 $btn-bg: (
   default: none,
+  hover: map-get($colors, 5),
 );
 
 $btn-border: (

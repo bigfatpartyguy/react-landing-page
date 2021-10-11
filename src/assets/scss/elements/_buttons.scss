@@ -7,4 +7,8 @@ button {
   padding: 0;
   cursor: pointer;
   @include theme-btn;
+
+  &:hover {
+    @include theme-btn('hover');
+  }
 }

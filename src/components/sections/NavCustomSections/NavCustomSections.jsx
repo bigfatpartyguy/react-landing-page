@@ -15,31 +15,31 @@ import styles from './NavCustomSections.module.scss';
 const NavMain = () => (
   <NavSection title="Main" itemsSpacing="12px">
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={fileLogo} alt="file icon" />}>
       Files
     </Button>
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={photoIcon} alt="photo icon" />}>
       Photos
     </Button>
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={sharingIcon} alt="sharing icon" />}>
       Sharing
     </Button>
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={linkIcon} alt="links icon" />}>
       Links
     </Button>
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={calendarIcon} alt="calendar icon" />}>
       Events
@@ -50,13 +50,13 @@ const NavMain = () => (
 const NavAlso = () => (
   <NavSection title="Also from Dropbox" itemsSpacing="6px">
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={carouselIcon} alt="carousel icon" />}>
       Carousel
     </Button>
     <Button
-      className="btn-icon-text"
+      className="btn-icon-text_full-width"
       type="text"
       icon={<Image src={mailboxIcon} alt="mailbox icon" />}>
       Mailbox
@@ -66,23 +66,23 @@ const NavAlso = () => (
 
 const NavLabels = () => (
   <NavSection title="Labels">
-    <Button className="btn-icon-text" type="text">
+    <Button className="btn-icon-text_full-width" type="text">
       <LabelIcon className={styles['label--color1']} />
       Design
     </Button>
-    <Button className="btn-icon-text" type="text">
+    <Button className="btn-icon-text_full-width" type="text">
       <LabelIcon className={styles['label--color2']} />
       Web Elements
     </Button>
-    <Button className="btn-icon-text" type="text">
+    <Button className="btn-icon-text_full-width" type="text">
       <LabelIcon className={styles['label--color3']} />
       Mobile
     </Button>
-    <Button className="btn-icon-text" type="text">
+    <Button className="btn-icon-text_full-width" type="text">
       <LabelIcon className={styles['label--color4']} />
       Application
     </Button>
-    <Button className="btn-icon-text" type="text">
+    <Button className="btn-icon-text_full-width" type="text">
       <LabelIcon className={styles['label--color5']} />
       UI/UX
     </Button>
