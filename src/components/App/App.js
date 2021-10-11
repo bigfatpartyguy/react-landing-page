@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import AppHeader from '../layout/Header/AppHeader';
 import ViewportHeader from '../layout/Header/ViewportHeader';
@@ -7,11 +7,10 @@ import styles from './App.module.scss';
 import Card from '../elements/Card/Card';
 import {addSelectedField} from '../../helpers/helpers';
 
-const CardContext = React.createContext();
-
 function App() {
   const [cards, setCards] = useState([]);
   const [selectedCount, setSelectedCount] = useState(0);
+  const [searchStr, setSearchStr] = useState('');
 
   useEffect(() => {
     console.log('call');
@@ -19,6 +18,10 @@ function App() {
       .then(response => response.json())
       .then(cards => setCards(addSelectedField(cards)));
   }, []);
+
+  const handleSearchStr = evt => {
+    setSearchStr(evt.target.value);
+  };
 
   const selectDeselectCard = id => {
     const card = cards.find(card => card.id === id);
@@ -57,19 +60,30 @@ function App() {
         <div className={styles.App}>
           <Nav />
           <div className={styles.container}>
-            <AppHeader />
+            <AppHeader
+              searchStr={searchStr}
+              handleSearchStr={handleSearchStr}
+            />
             <main className={styles.main}>
               <ViewportHeader count={selectedCount} />
               <section className={styles.main__content}>
-                {cards.map(card => (
-                  <Card
-                    key={card.id}
-                    fluid
-                    cardInfo={card}
-                    handleSelectDeselect={selectDeselectCard}
-                    handleDelete={deleteCard}
-                  />
-                ))}
+                {cards
+                  .filter(card => {
+                    if (!searchStr) return true;
+                    const reg = new RegExp(`${searchStr}`, 'i');
+                    const match = card.filename.match(reg);
+                    if (match) return true;
+                    return false;
+                  })
+                  .map(card => (
+                    <Card
+                      key={card.id}
+                      fluid
+                      cardInfo={card}
+                      handleSelectDeselect={selectDeselectCard}
+                      handleDelete={deleteCard}
+                    />
+                  ))}
               </section>
             </main>
           </div>

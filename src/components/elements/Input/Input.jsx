@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './Input.module.scss';
 
-const Input = ({className, name, placeholder, type}) => {
-  const [value, setValue] = useState('');
+const Input = ({className, name, placeholder, type, value, onChange}) => {
   return (
     <input
-      onChange={e => setValue(e.target.value)}
+      onChange={onChange}
       type={type}
       className={styles[className]}
       id={name}
