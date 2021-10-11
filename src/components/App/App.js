@@ -11,6 +11,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [selectedCount, setSelectedCount] = useState(0);
   const [searchStr, setSearchStr] = useState('');
+  const [layoutView, setLayoutView] = useState('thumb');
 
   useEffect(() => {
     console.log('call');
@@ -21,6 +22,10 @@ function App() {
 
   const handleSearchStr = evt => {
     setSearchStr(evt.target.value);
+  };
+
+  const changeLayoutView = view => {
+    setLayoutView(view);
   };
 
   const selectDeselectCard = id => {
@@ -65,7 +70,11 @@ function App() {
               handleSearchStr={handleSearchStr}
             />
             <main className={styles.main}>
-              <ViewportHeader count={selectedCount} />
+              <ViewportHeader
+                count={selectedCount}
+                layoutView={layoutView}
+                changeLayoutView={changeLayoutView}
+              />
               <section className={styles.main__content}>
                 {cards
                   .filter(card => {

@@ -26,4 +26,4 @@ const CustomNav = () => (
   </Nav>
 );
 
-export default CustomNav;
+export default React.memo(CustomNav);

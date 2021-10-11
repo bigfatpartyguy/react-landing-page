@@ -11,61 +11,87 @@ import {ReactComponent as ListViewIcon} from '../../../../assets/images/List_Vie
 import {ReactComponent as DetailViewIcon} from '../../../../assets/images/Detail_View.svg';
 import styles from './ViewportHeader.module.scss';
 
-const ViewportHeader = ({count}) => (
-  <Header theme="light" size="slim">
-    <div className={styles['viewport-header__container']}>
-      <section className={styles['viewport-header__menu']}>
-        <Button
-          className="btn-icon-text"
-          type="text"
-          icon={<Image src={uploadIcon} alt="upload icon" />}>
-          Upload
-        </Button>
-        <Button
-          className="btn-icon-text"
-          type="text"
-          icon={<Image src={folderIcon} alt="folder icon" />}>
-          New Folder
-        </Button>
-        <Button
-          className="btn-icon-text"
-          type="text"
-          icon={<Image src={shareFolderIcon} alt="share a folder icon" />}>
-          Share a Folder
-        </Button>
-        <Button
-          className="btn-icon-text"
-          type="text"
-          icon={<Image src={trashIcon} alt="trash icon" />}>
-          Trash
-        </Button>
-      </section>
-      {count > 0 ? (
-        <p className={styles['viewport-header__info']}>
-          You have selected {count} items
-        </p>
-      ) : (
-        ''
-      )}
-      <section className={styles['viewport-header__display-options']}>
-        <Button className="btn-icon-text">
-          <ThumbViewIcon
-            className={styles['viewport-header__display-options__icon']}
-          />
-        </Button>
-        <Button className="btn-icon-text">
-          <ListViewIcon
-            className={styles['viewport-header__display-options__icon']}
-          />
-        </Button>
-        <Button className="btn-icon-text">
-          <DetailViewIcon
-            className={styles['viewport-header__display-options__icon']}
-          />
-        </Button>
-      </section>
-    </div>
-  </Header>
-);
+const ViewportHeader = ({count, layoutView, changeLayoutView}) => {
+  return (
+    <Header theme="light" size="slim">
+      <div className={styles['viewport-header__container']}>
+        <section className={styles['viewport-header__menu']}>
+          <Button
+            className="btn-icon-text"
+            type="text"
+            icon={<Image src={uploadIcon} alt="upload icon" />}>
+            Upload
+          </Button>
+          <Button
+            className="btn-icon-text"
+            type="text"
+            icon={<Image src={folderIcon} alt="folder icon" />}>
+            New Folder
+          </Button>
+          <Button
+            className="btn-icon-text"
+            type="text"
+            icon={<Image src={shareFolderIcon} alt="share a folder icon" />}>
+            Share a Folder
+          </Button>
+          <Button
+            className="btn-icon-text"
+            type="text"
+            icon={<Image src={trashIcon} alt="trash icon" />}>
+            Trash
+          </Button>
+        </section>
+        {count > 0 ? (
+          <p className={styles['viewport-header__info']}>
+            You have selected {count} items
+          </p>
+        ) : (
+          ''
+        )}
+        <section className={styles['viewport-header__display-options']}>
+          <Button
+            className="btn-icon-text"
+            onClick={() => changeLayoutView('thumb')}>
+            <ThumbViewIcon
+              className={
+                styles[
+                  `viewport-header__display-options__icon${
+                    layoutView === 'thumb' ? '_active' : ''
+                  }`
+                ]
+              }
+            />
+          </Button>
+          <Button
+            className="btn-icon-text"
+            onClick={() => changeLayoutView('list')}>
+            <ListViewIcon
+              className={
+                styles[
+                  `viewport-header__display-options__icon${
+                    layoutView === 'list' ? '_active' : ''
+                  }`
+                ]
+              }
+            />
+          </Button>
+          <Button
+            className="btn-icon-text"
+            onClick={() => changeLayoutView('detail')}>
+            <DetailViewIcon
+              className={
+                styles[
+                  `viewport-header__display-options__icon${
+                    layoutView === 'detail' ? '_active' : ''
+                  }`
+                ]
+              }
+            />
+          </Button>
+        </section>
+      </div>
+    </Header>
+  );
+};
 
 export default ViewportHeader;

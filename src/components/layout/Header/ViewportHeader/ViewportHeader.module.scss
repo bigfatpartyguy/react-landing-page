@@ -28,6 +28,11 @@
       path {
         fill: map-get($view-icon, default);
       }
+      &_active {
+        path {
+          fill: map-get($view-icon, active);
+        }
+      }
     }
   }
 }

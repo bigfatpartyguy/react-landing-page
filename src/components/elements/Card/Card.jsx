@@ -101,7 +101,7 @@ const areEqual = (prevProps, nextProps) => {
   for (let key in prevProps) {
     // I know it isn't right, but...
     // just skip handler functions
-    if (typeof key === 'function') {
+    if (typeof prevProps[key] === 'function') {
       continue;
     }
     falseCounter += Object.is(prevProps[key], nextProps[key]) ? 0 : 1;
