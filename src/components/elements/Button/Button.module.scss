@@ -11,7 +11,7 @@
     justify-content: flex-start;
 
     &:hover {
-      @include theme-btn($text: hover, $bg: hover);
+      @include theme-btn($text: hover, $bg: aside-hover);
     }
   }
 

@@ -19,6 +19,7 @@ $colors: (
   16: #ffffff,
   17: #0a8df3,
   18: #f4f4f4,
+  19: #e7e7e7,
 );
 
 $btn-text: (
@@ -28,7 +29,7 @@ $btn-text: (
 
 $btn-bg: (
   default: none,
-  hover: map-get($colors, 5),
+  aside-hover: map-get($colors, 19),
 );
 
 $btn-border: (

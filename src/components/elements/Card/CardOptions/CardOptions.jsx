@@ -9,16 +9,16 @@ const CardOptions = ({handleShare, handleDownload, handleDelete, position}) => {
   return (
     <div
       className={styles[`card-options${position === 'left' ? '_left' : ''}`]}>
-      <Button className="btn-icon-text light-text" type="text">
+      <Button className="btn-icon-text_full-width light-text" type="text">
         <ShareIcon />
         Share
       </Button>
-      <Button className="btn-icon-text light-text" type="text">
+      <Button className="btn-icon-text_full-width light-text" type="text">
         <DownloadIcon />
         Download as .zip
       </Button>
       <Button
-        className="btn-icon-text light-text"
+        className="btn-icon-text_full-width light-text"
         type="text"
         onClick={handleDelete}>
         <DeleteIcon />
